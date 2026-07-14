@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "JLU 教务增强工具",
+  "version": "1.0.0",
+  "description": "吉林大学教务系统成绩统计、学业进度、课表、考试安排增强工具",
+  "permissions": [
+    "sidePanel",
+    "activeTab",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://iedu.jlu.edu.cn/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://iedu.jlu.edu.cn/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "action": {
+    "default_title": "JLU 教务增强工具"
+  }
+}

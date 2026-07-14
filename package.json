@@ -10,6 +10,7 @@
     "build:sidepanel": "cross-env BUILD_TARGET=sidepanel vite build",
     "build:content": "cross-env BUILD_TARGET=content vite build",
     "build:background": "cross-env BUILD_TARGET=background vite build",
+    "package": "node scripts/package.js",
     "lint": "oxlint",
     "preview": "vite preview"
   },

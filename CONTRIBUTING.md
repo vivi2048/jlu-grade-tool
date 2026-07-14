@@ -6,7 +6,7 @@
 
 ### 报告 Bug
 
-1. 在 [Issues](https://github.com/YOUR_USERNAME/jlu-grade-tool/issues) 页面创建新 issue
+1. 在 [Issues](https://github.com/vivi2048/jlu-grade-tool/issues) 页面创建新 issue
 2. 选择 "Bug Report" 模板
 3. 详细描述问题，包括：
    - 复现步骤
@@ -35,7 +35,7 @@
 
 ```bash
 # 克隆仓库
-git clone https://github.com/YOUR_USERNAME/jlu-grade-tool.git
+git clone https://github.com/vivi2048/jlu-grade-tool.git
 cd jlu-grade-tool
 
 # 安装依赖

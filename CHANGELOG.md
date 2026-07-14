@@ -45,5 +45,5 @@
 - **修复**：问题修复
 - **安全**：安全性相关修复
 
-[未发布]: https://github.com/YOUR_USERNAME/jlu-grade-tool/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/YOUR_USERNAME/jlu-grade-tool/releases/tag/v1.0.0
+[未发布]: https://github.com/vivi2048/jlu-grade-tool/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/vivi2048/jlu-grade-tool/releases/tag/v1.0.0

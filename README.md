@@ -24,7 +24,7 @@
 
 1. 克隆或下载本项目
 ```bash
-git clone https://github.com/YOUR_USERNAME/jlu-grade-tool.git
+git clone https://github.com/vivi2048/jlu-grade-tool.git
 cd jlu-grade-tool
 ```
 
@@ -48,7 +48,7 @@ npm run build
 
 <!-- TODO: 在 GitHub Releases 页面提供下载 -->
 <!-- 
-1. 前往 [Releases](https://github.com/YOUR_USERNAME/jlu-grade-tool/releases) 页面
+1. 前往 [Releases](https://github.com/vivi2048/jlu-grade-tool/releases) 页面
 2. 下载最新版本的 `jlu-grade-tool.zip`
 3. 解压到任意文件夹
 4. 按照上述步骤 4 加载到 Chrome

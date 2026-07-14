@@ -14,9 +14,7 @@
 
 ## 📸 截图
 
-<!-- TODO: 添加截图 -->
-<!-- ![Screenshot 1](screenshots/s1.png) -->
-<!-- ![Screenshot 2](screenshots/s2.png) -->
+![扩展全局预览](./screenshots/global.png)
 
 ## 🚀 安装方法
 

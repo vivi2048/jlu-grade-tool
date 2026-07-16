@@ -20,8 +20,6 @@
 
 ## 🚀 安装方法
 
-### 方法一：从源码构建（推荐）
-
 1. 克隆或下载本项目
 ```bash
 git clone https://github.com/vivi2048/jlu-grade-tool.git
@@ -43,16 +41,6 @@ npm run build
    - 开启右上角"开发者模式"
    - 点击"加载已解压的扩展程序"
    - 选择项目中的 `dist` 文件夹
-
-### 方法二：使用预构建版本
-
-<!-- TODO: 在 GitHub Releases 页面提供下载 -->
-<!-- 
-1. 前往 [Releases](https://github.com/vivi2048/jlu-grade-tool/releases) 页面
-2. 下载最新版本的 `jlu-grade-tool.zip`
-3. 解压到任意文件夹
-4. 按照上述步骤 4 加载到 Chrome
--->
 
 ## 📖 使用方法
 

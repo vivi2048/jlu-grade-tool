@@ -13,6 +13,33 @@
 - 深色模式支持
 - 多语言支持
 
+## [1.1.0] - 2025-07-16
+
+### 新增
+- **自定义课程选择** — 支持按课程勾选计算 GPA，适配不同学院保研政策
+- **方案管理** — 保存多套选课方案（命名、加载、删除），跨会话持久化
+- **打包脚本** — `node scripts/package.js` 一键生成 Release zip
+- **安装指南** — 面向新手的 HTML/Markdown 双格式使用说明
+- **GitHub 模板** — Issue 模板（Bug 报告/功能请求）、PR 模板、贡献指南
+
+### 优化
+- **性能提升** — 成绩分布计算从 O(n×r) 优化至 O(n)，最高/最低分从 O(n log n) 优化至 O(n)
+- **并行分页** — 成绩获取使用 Promise.all 并行请求，大幅减少加载时间
+- **算法优化** — isFiveLevel() 从 O(n) 优化至 O(1)，减少代码重复
+
+### 更改
+- **UI 统一** — 全局限定 indigo 主题色 + amber 点缀，Hero 区域渐变背景
+- **文案精简** — GPA/WAM/课程数/总学分等标签标准化
+- **扩展名称** — 移除版本号，统一为「JLU 成绩查询助手」
+- **Hero 徽章** — 自定义选择状态改用毛玻璃胶囊设计，更融入深色背景
+- **README 重构** — 表格功能列表、徽章、引用块提示、隐私章节
+
+### 技术
+- 新增 `useCourseSelection` Hook，管理课程选择状态与持久化
+- `calculateStatistics()` 支持可选 `selectedCourses` 参数（向后兼容）
+- manifest 添加 `storage` 权限
+- 课程选择方案存储于 `localStorage` + `chrome.storage.local`
+
 ## [1.0.0] - 2024-07-14
 
 ### 新增
@@ -45,5 +72,6 @@
 - **修复**：问题修复
 - **安全**：安全性相关修复
 
-[未发布]: https://github.com/vivi2048/jlu-grade-tool/compare/v1.0.0...HEAD
+[未发布]: https://github.com/vivi2048/jlu-grade-tool/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/vivi2048/jlu-grade-tool/releases/tag/v1.1.0
 [1.0.0]: https://github.com/vivi2048/jlu-grade-tool/releases/tag/v1.0.0

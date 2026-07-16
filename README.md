@@ -1,129 +1,109 @@
-# JLU 成绩查询助手
+<p align="center">
+  <h2 align="center">JLU 成绩查询助手</h2>
+  <p align="center">吉林大学教务系统成绩管理浏览器扩展</p>
+</p>
 
-一款轻量级浏览器扩展，为吉林大学学生提供更直观的成绩管理体验。在教务系统页面侧边栏实时查看成绩、计算 GPA、追踪学业进度，并支持按课程自定义计算——满足不同学院的保研政策需求。
+<p align="center">
+  <img src="https://img.shields.io/badge/version-1.1.0-indigo" alt="version">
+  <img src="https://img.shields.io/badge/license-MIT-blue" alt="license">
+  <img src="https://img.shields.io/badge/browser-Chrome%20%7C%20Edge-green" alt="browser">
+</p>
 
-## ✨ 功能特性
+在教务系统侧边栏中实时查看成绩、计算 GPA、追踪学业进度。支持按课程自定义计算，灵活适配各学院保研政策。
 
-- **实时成绩查看** - 在 iedu.jlu.edu.cn 页面侧边栏直接查看成绩
-- **GPA 计算** - 自动计算总绩点、加权平均分
-- **自定义课程选择** - 按保研政策灵活选择课程计算 GPA
-- **方案管理** - 保存多套课程选择方案，一键切换
-- **学期趋势** - 可视化展示各学期 GPA 变化趋势
-- **成绩分布** - 统计各分数段课程数量
-- **学业进度** - 显示已修学分与总学分进度
-- **最高/最低分** - 快速查看成绩极值
-- **现代化界面** - 精美的渐变设计和动画效果
+---
 
-## 📸 截图
+## 功能
+
+| | |
+|---|---|
+| **成绩查询** | 侧边栏实时展示所有课程成绩，支持五级制自动转换 |
+| **GPA 计算** | 总绩点、加权平均分（WAM）、必修/选修绩点一目了然 |
+| **自定义选择** | 按课程勾选计算 GPA，适配不同学院保研政策 |
+| **方案管理** | 保存多套选课方案，一键切换，跨会话持久化 |
+| **学期趋势** | 折线图可视化各学期 GPA 与均分变化 |
+| **成绩分布** | 分数段课程数量统计，直观了解成绩结构 |
+| **学业进度** | 已修学分 vs 培养方案总学分，进度清晰可见 |
+| **极值速览** | 最高分 / 最低分课程快速定位 |
+
+## 截图
 
 ![扩展全局预览](./screenshots/global.png)
 
-## 🚀 安装方法
+## 安装
 
-### 方法一：从源码构建
+### 从源码构建
 
-1. 克隆或下载本项目
 ```bash
 git clone https://github.com/vivi2048/jlu-grade-tool.git
 cd jlu-grade-tool
-```
-
-2. 安装依赖
-```bash
 npm install
-```
-
-3. 构建扩展
-```bash
 npm run build
 ```
 
-4. 加载到 Chrome
-   - 打开 Chrome，进入 `chrome://extensions/`
-   - 开启右上角"开发者模式"
-   - 点击"加载已解压的扩展程序"
-   - 选择项目中的 `dist` 文件夹
+然后在浏览器中加载：
 
-### 方法二：使用预构建版本
+1. 打开 `chrome://extensions/`（Edge 为 `edge://extensions/`）
+2. 开启「开发者模式」
+3. 点击「加载已解压的扩展程序」
+4. 选择项目中的 `dist` 文件夹
 
-1. 前往 [Releases](https://github.com/vivi2048/jlu-grade-tool/releases) 页面
-2. 下载最新版本的 `jlu-grade-tool.zip`
-3. 解压到任意文件夹
-4. 按照方法一的步骤 4 加载到 Chrome
+### 使用预构建版本
 
-## 📖 使用方法
+前往 [Releases](https://github.com/vivi2048/jlu-grade-tool/releases) 下载最新 `jlu-grade-tool.zip`，解压后按上述步骤 1-4 加载。
 
-1. 访问吉林大学教务系统：[iedu.jlu.edu.cn](https://iedu.jlu.edu.cn)
-2. 点击浏览器工具栏的扩展图标
-3. 选择"在侧边栏中打开"
-4. 扩展会自动加载你的成绩数据
+## 使用
+
+1. 访问 [iedu.jlu.edu.cn](https://iedu.jlu.edu.cn) 并登录
+2. 点击浏览器工具栏扩展图标 → 选择「在侧边栏中打开」
+3. 成绩数据自动加载
 
 ### 自定义课程选择
 
-不同学院的保研政策可能不同，你可以选择特定课程来计算 GPA：
+选择学期后，通过复选框勾选需要计入的课程，GPA 会实时重新计算。支持将选择保存为命名方案（如「计科保研」「不含体育」），下次一键加载：
 
-- 在"学期趋势"下方选择一个学期
-- 勾选/取消需要计入的课程，GPA、WAM 等数据会实时更新
-- 点击"方案管理"可将当前选择保存为命名方案（如"计算机学院保研"）
-- 下次使用时一键加载已保存的方案，无需重新选择
+- 展开学期列表上方的「方案管理」面板
+- 输入方案名称，点击「保存」
+- 之后可随时切换或删除已保存的方案
 
-## 🛠️ 开发
-
-### 技术栈
-
-- **React 19** + **TypeScript** - 前端框架
-- **Vite** - 构建工具
-- **Tailwind CSS v4** - 样式
-- **ECharts** - 图表可视化
-- **Chrome Extension API** - 浏览器扩展
-
-### 开发模式
+## 开发
 
 ```bash
+# 开发模式（支持热更新）
 npm run dev
-```
 
-这会启动 Vite 开发服务器，支持热更新。修改代码后需要重新构建并刷新扩展。
-
-### 构建
-
-```bash
+# 生产构建
 npm run build
+
+# 打包 Release zip
+node scripts/package.js
 ```
 
-构建产物在 `dist` 目录。
-
-### 项目结构
+**技术栈：** React 19 · TypeScript · Vite · Tailwind CSS v4 · ECharts
 
 ```
-jlu-grade-tool/
-├── src/
-│   ├── api/          # API 请求
-│   ├── components/   # React 组件
-│   ├── core/         # 核心逻辑（统计计算等）
-│   ├── hooks/        # 自定义 Hooks
-│   ├── types/        # TypeScript 类型定义
-│   └── styles/       # 全局样式
-├── public/           # 静态资源
-└── dist/             # 构建产物（加载到 Chrome）
+src/
+├── api/          # 教务系统 API 请求
+├── core/         # 统计计算核心逻辑
+├── hooks/        # 自定义 Hooks
+├── types/        # TypeScript 类型定义
+└── styles/       # 全局样式与动画
 ```
 
-## 📝 注意事项
+## 隐私
 
-- 本扩展仅在 iedu.jlu.edu.cn 域名下生效
-- 需要登录教务系统后才能使用
-- 成绩数据从教务系统实时获取，不会上传到任何服务器
-- 课程选择方案保存在本地浏览器中，不会同步到其他设备
-- 仅在本地浏览器中处理和显示数据
+- 所有数据在本地处理和显示，不上传至任何服务器
+- 课程选择方案存储于浏览器本地（`localStorage` + `chrome.storage.local`）
+- 仅在 `iedu.jlu.edu.cn` 域名下激活
 
-## 🤝 贡献
+## 贡献
 
-欢迎提交 Issue 和 Pull Request！
+欢迎提交 Issue 和 Pull Request。
 
-## 📄 许可证
+## 许可证
 
 [MIT License](LICENSE)
 
 ---
 
-**免责声明**：本扩展仅供学习交流使用，与吉林大学官方无关。使用本扩展即表示你同意自行承担使用风险。
+<sub>本扩展仅供学习交流，与吉林大学官方无关。使用即表示自行承担风险。</sub>

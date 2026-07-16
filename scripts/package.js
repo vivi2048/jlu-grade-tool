@@ -1,8 +1,16 @@
 import { execSync } from 'child_process'
-import { existsSync, mkdirSync } from 'fs'
+import { existsSync, mkdirSync, readFileSync } from 'fs'
 import { join } from 'path'
 
-const version = process.env.npm_package_version || '1.0.0'
+// 读取版本号：优先从 package.json，其次从环境变量，最后默认为 1.0.0
+let version = '1.0.0'
+try {
+  const pkg = JSON.parse(readFileSync(join(process.cwd(), 'package.json'), 'utf-8'))
+  version = pkg.version || version
+} catch {
+  version = process.env.npm_package_version || version
+}
+
 const outputName = `jlu-grade-tool-v${version}.zip`
 
 console.log('📦 开始打包 JLU 成绩查询助手...\n')

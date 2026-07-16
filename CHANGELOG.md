@@ -40,7 +40,7 @@
 - manifest 添加 `storage` 权限
 - 课程选择方案存储于 `localStorage` + `chrome.storage.local`
 
-## [1.0.0] - 2024-07-14
+## [1.0.0] - 2026-07-14
 
 ### 新增
 - 初始版本发布

@@ -19,9 +19,16 @@ function isElective(course: GradeItem): boolean {
 
 /**
  * 计算完整的成绩统计
+ * @param grades 成绩列表
+ * @param selectedCourses 可选，选中的课程 WID 集合。未传入时计算全部课程
  */
-export function calculateStatistics(grades: GradeItem[]): GradeStatistics {
-  if (!grades.length) {
+export function calculateStatistics(grades: GradeItem[], selectedCourses?: Set<string>): GradeStatistics {
+  // 如果提供了选中课程集合，先过滤
+  const sourceGrades = selectedCourses && selectedCourses.size > 0
+    ? grades.filter(g => g.WID && selectedCourses.has(g.WID))
+    : grades
+
+  if (!sourceGrades.length) {
     return {
       totalGPA: 0, requiredGPA: 0, electiveGPA: 0,
       weightedAverage: 0, requiredAverage: 0,
@@ -32,7 +39,7 @@ export function calculateStatistics(grades: GradeItem[]): GradeStatistics {
 
   // 按课程号去重（取最高成绩）
   const courseMap = new Map<string, GradeItem>()
-  for (const g of grades) {
+  for (const g of sourceGrades) {
     const key = g.KCH || getCourseName(g)
     const existing = courseMap.get(key)
     if (!existing || getScore(g) > getScore(existing)) {

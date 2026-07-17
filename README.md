@@ -1,7 +1,7 @@
-<p align="center">
-  <h2 align="center">JLU 成绩查询助手</h2>
-  <p align="center">吉林大学教务系统成绩管理浏览器扩展</p>
-</p>
+<div align="center">
+  <h2>JLU 成绩查询助手</h2>
+  <p>吉林大学教务系统成绩管理浏览器扩展</p>
+</div>
 
 <p align="center">
   <img src="https://img.shields.io/badge/version-1.1.0-indigo" alt="version">
